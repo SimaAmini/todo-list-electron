@@ -1,4 +1,4 @@
-const {app, BrowserWindow} = require('electron')
+const { app, BrowserWindow } = require('electron')
 const path = require('path')
 const url = require('url')
 
@@ -30,4 +30,5 @@ app.once('ready', () => {
   window.once('ready-to-show', () => {
     window.show()
   })
+  // window.setMenu(null);
 })
