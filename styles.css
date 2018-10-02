@@ -1,19 +1,14 @@
 html, body, .container-fluid {
-  background-color: #D6D8DC;
+  background-color: #3e4e6f;
+  font-family: 'Acme', sans-serif;
 }
 
-.text-input {
+#task-input {
   font-size: 16px;
 }
 
-.hash-output {
-  color: #575B5E;
-  font-size: 16px;
-  letter-spacing: 2px;
-  white-space: pre-wrap;
-}
-
-.hash-heading {
-  color: #575B5E;
-  font-weight: normal;
+#taskListBlock {
+  font-size: 5rem;
+  text-align: center;
+  color: #f5deb3;
 }
