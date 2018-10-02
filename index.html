@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  <title>SimTask</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./styles.css">
+
+  <!-- Scripts -->
+  <script>
+    delete module.exports
+  </script>
+  <script src="./window.js" charset="utf-8"></script>
+</head>
+
+<body>
+  <div id="container" class="container-fluid">
+
+    <!-- Input row -->
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+        <input rows="2" id="task-input" class="form-control text-input" placeholder="Enter new Task...">
+      </div>
+      <button type="submit" onclick="add()">submit</button>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 col-xs-10 col-xs-offset-1" id="taskListBlock">
+
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

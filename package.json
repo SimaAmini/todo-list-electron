@@ -1,0 +1,25 @@
+{
+  "name": "todo-list-electron",
+  "version": "1.0.0",
+  "description": "Simple todo-list using electron.js",
+  "main": "app.js",
+  "scripts": {
+    "start": "electron app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SimaAmini/todo-list-electron.git"
+  },
+  "keywords": [
+    "electron.js"
+  ],
+  "author": "Sima Amini",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^3.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/SimaAmini/todo-list-electron/issues"
+  },
+  "homepage": "https://github.com/SimaAmini/todo-list-electron#readme"
+}
