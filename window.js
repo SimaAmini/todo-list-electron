@@ -1,28 +1,32 @@
 // Add new task
-function add() {
-  let newTask = document.getElementById('task-input').value;
-  let taskInput = document.getElementById('task-input');
+let taskInput = document.getElementById('task-input');
+taskInput.focus()
 
-  //check if the input is empty
-  if (newTask == "") {
-    alert('Enter a task');
+taskInput.addEventListener('keyup', (event) => {
+  event.preventDefault();
+  if (event.keyCode === 13) {
+    let newTask = document.getElementById('task-input').value;
 
-  } else {
-    //make the input empty after submit
-    document.getElementById('task-input').value = '';
+    //check if the input is empty
+    if (newTask == "") {
+      alert('Enter a task');
 
-    // keep focus on the input
-    taskInput.focus()
+    } else {
+      //make the input empty after submit
+      document.getElementById('task-input').value = '';
 
-    console.log(newTask);
-    
-    let pTag = document.createElement('p');
-    let taskTag = document.createElement('span');
-    let task = document.createTextNode(newTask);
-    let taskListBlock = document.getElementById('taskListBlock');
+      // keep focus on the input
 
-    taskTag.appendChild(task);
-    pTag.appendChild(taskTag);
-    taskListBlock.appendChild(pTag);
+      console.log(newTask);
+
+      let pTag = document.createElement('p');
+      let taskTag = document.createElement('span');
+      let task = document.createTextNode(newTask);
+      let taskListBlock = document.getElementById('taskListBlock');
+
+      taskTag.appendChild(task);
+      pTag.appendChild(taskTag);
+      taskListBlock.appendChild(pTag);
+    }
   }
-}
+})
