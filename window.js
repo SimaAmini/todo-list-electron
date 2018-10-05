@@ -71,7 +71,7 @@ add = () => {
 
     arrayOfObjects.tasks.push({
       id: elemID,
-      task: newTask,
+      text: newTask,
       status: false
     })
     writeToFile();
