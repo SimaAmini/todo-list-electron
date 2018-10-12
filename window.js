@@ -1,4 +1,12 @@
+const { remote } = require('electron');
+const electron = require('electron');
+
+electron.ipcRenderer.on('color', (event, arg) => {
+  document.body.style.backgroundColor = arg;
+})
+
 //  Defined Variavles
+
 let fs = require('fs')
 let arrayOfObjects, taskList;
 let taskInput = document.getElementById('task-input');
@@ -62,10 +70,10 @@ add = () => {
     let taskListBlock = document.getElementById('taskListBlock');
     let elemID = new Date().getTime();
     pTag.innerHTML = `
-      <div id = "${elemID}">
-      - <span>${newTask}</span>
-     ${elements}
-      </div>`;
+    <div id = "${elemID}">
+    - <span>${newTask}</span>
+   ${elements}
+    </div>`;
 
     taskListBlock.appendChild(pTag);
 

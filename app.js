@@ -1,8 +1,8 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, Menu } = require('electron')
 const path = require('path')
 const url = require('url')
 
-let window = null
+let window = null;
 
 // Wait until the app is ready
 app.once('ready', () => {
@@ -18,7 +18,7 @@ app.once('ready', () => {
     // Don't show the window until it's ready, this prevents any white flickering
     show: false,
     // Add icon for the app
-    icon: path.join(__dirname, 'list.png')
+    icon: path.join(__dirname, 'assets/images/list.png')
   })
 
   // Load a URL in the window to the local index.html path
@@ -32,5 +32,46 @@ app.once('ready', () => {
   window.once('ready-to-show', () => {
     window.show()
   })
-  // window.setMenu(null);
+  window.setMenu(null);
+  const template = [
+    {
+      label: 'view',
+      submenu: [
+        {
+          label: 'Background Color',
+          submenu: [
+            {
+              label: 'red',
+              icon: 'assets/images/red.png',
+              click: () => { window.webContents.send('color', '#ff1654') }
+            },
+            {
+              label: 'blue',
+              icon: 'assets/images/blue.png',
+              click: () => { window.webContents.send('color', '#00B2FF') }
+            },
+            {
+              label: 'dark blue',
+              icon: 'assets/images/darkblue.png',
+              click: () => { window.webContents.send('color', '#247ba0') }
+            },
+            {
+              label: 'pastel red',
+              icon: 'assets/images/pink.png',
+              click: () => { window.webContents.send('color', '#FF686B') }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      label: "developer",
+      click: () => {
+        window.webContents.toggleDevTools();
+
+      }
+    }
+  ]
+  const menu = Menu.buildFromTemplate(template);
+  Menu.setApplicationMenu(menu);
 })
