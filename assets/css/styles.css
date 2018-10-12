@@ -1,0 +1,43 @@
+body{
+  height: 100vh;
+  background-color: #3e4e6f;
+
+}
+html, body, .container-fluid {
+  /* background-color: #32d296; */
+  font-family: 'Acme', sans-serif;
+}
+
+#task-input {
+  font-size: 16px;
+}
+
+#taskListBlock {
+  font-size: 5rem;
+  /* text-align: center; */
+  color: #f5deb3;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+a.deleteBtn:hover {
+  color: crimson;
+}
+
+a.editBtn:hover {
+  color: blue;
+}
+
+a.doneBtn:hover {
+  color: green;
+}
+
+.actions {
+  float: right;
+}
+
+.actions>a {
+  color: #f5deb3;
+}
